@@ -1,0 +1,16 @@
+//* Thêm thông báo đầu bài viết Genesis Framework
+add_action( 'genesis_before_entry_content', 'custom_notice' );
+/**
+ * Add custom affiliate link disclosure notice above the content on single Posts.
+ */
+function custom_notice() {
+    // if this is not a single Post, abort.
+    if ( ! is_singular(  'post' ) ) {
+        return;
+    } ?>
+    <div class="affiliate-disclosure-notice">
+		  <p>Đây là nội dung thông báo của bạn
+		  </p>
+    </div>
+<?php
+}
